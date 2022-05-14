@@ -71,9 +71,44 @@ input { display: none; }
     pointer-events: auto;
 }
 
-#i_1:checked ~ .controls label[for="i_1"],
-#i_2:checked ~ .controls label[for="i_2"],
-#i_3:checked ~ .controls label[for="i_3"],
-#i_4:checked ~ .controls label[for="i_4"] {
-  color: #424242;
+label {
+    color: #E0E0E0;
+    transition-duration: 1s;
+    cursor: pointer;
+  }
+
+#i_1:checked ~ .controls_container .controls label[for="i_1"],
+#i_2:checked ~ .controls_container .controls label[for="i_2"],
+#i_3:checked ~ .controls_container .controls label[for="i_3"],
+#i_4:checked ~ .controls_container .controls label[for="i_4"] {
+    color: #424242;   
+}
+
+.controls_container {
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+}
+
+.title_container {
+    display: flex;
+}
+
+.title {
+    width: 0;
+    visibility: hidden;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+
+#i_1:checked ~ .controls_container .title_1,
+#i_2:checked ~ .controls_container .title_2,
+#i_3:checked ~ .controls_container .title_3,
+#i_4:checked ~ .controls_container .title_4 {
+    width: 10rem;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }

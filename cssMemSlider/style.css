@@ -20,6 +20,7 @@ html, body {
     display: flex;
     background-color: aliceblue;
     border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.05rem 12rem #73c8adae;
 }
 
 input { display: none; }
@@ -72,8 +73,8 @@ input { display: none; }
 }
 
 label {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,20 +85,27 @@ label {
 .circle {
     width: 1rem;
     height: 1rem;
-    /* background-color: #fff; */
+    background-color: rgba(255, 255, 255, 0.847);
     border-radius: 50%;
     border: 0.1rem solid white;
+    transition: 0.5s;
 }
 
 label:hover .circle {
-    background-color: rgb(65, 62, 62);
+    width: 1.2rem;
+    height: 1.2rem;
+    box-shadow: 0.05rem 0.05rem 1rem #6bd4b3;
 }
 
-#i_1:checked ~ .controls_container .controls label[for="i_1"],
-#i_2:checked ~ .controls_container .controls label[for="i_2"],
-#i_3:checked ~ .controls_container .controls label[for="i_3"],
-#i_4:checked ~ .controls_container .controls label[for="i_4"] {
-    color: #424242;   
+label:active .circle {
+    background-color: #73c8adae;
+}
+
+#i_1:checked ~ .controls_container .controls label[for="i_1"] .circle,
+#i_2:checked ~ .controls_container .controls label[for="i_2"] .circle,
+#i_3:checked ~ .controls_container .controls label[for="i_3"] .circle,
+#i_4:checked ~ .controls_container .controls label[for="i_4"] .circle {
+    background-color: #424242;   
 }
 
 .controls_container {

@@ -72,10 +72,26 @@ input { display: none; }
 }
 
 label {
-    color: #E0E0E0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition-duration: 1s;
     cursor: pointer;
-  }
+}
+
+.circle {
+    width: 1rem;
+    height: 1rem;
+    /* background-color: #fff; */
+    border-radius: 50%;
+    border: 0.1rem solid white;
+}
+
+label:hover .circle {
+    background-color: rgb(65, 62, 62);
+}
 
 #i_1:checked ~ .controls_container .controls label[for="i_1"],
 #i_2:checked ~ .controls_container .controls label[for="i_2"],
@@ -85,29 +101,36 @@ label {
 }
 
 .controls_container {
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 60vw;
 }
 
+.controls { display: flex; }
+
 .title_container {
     display: flex;
+    align-items: center;
 }
 
 .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
     width: 0;
     visibility: hidden;
     color: white;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 1s;
+    transition: opacity 2s;
 }
 
 #i_1:checked ~ .controls_container .title_1,
 #i_2:checked ~ .controls_container .title_2,
 #i_3:checked ~ .controls_container .title_3,
 #i_4:checked ~ .controls_container .title_4 {
-    width: 10rem;
+    width: 100%;
     visibility: visible;
     opacity: 1;
     pointer-events: auto;

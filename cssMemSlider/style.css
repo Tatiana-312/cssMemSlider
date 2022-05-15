@@ -16,7 +16,7 @@ html, body {
 }
 
 .wrapper {
-    width: 50vw;
+    width: calc(24vw + 20rem);
     margin: 0 auto;
 }
 
@@ -33,40 +33,20 @@ input { display: none; }
 .slide { width: 0; }
 
 .img_container {
-    width: 50vw;
-    height: 60vh;
+    padding: 1rem;
+    width: calc(24vw + 20rem);
+    height: calc(34vw + 20rem);
     border-radius: 0.5rem;
     opacity: 0;
     pointer-events: none;
     transition: opacity 2s;
 }
 
-.img_1 {
-    background-image: url(./assets/mem1.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.img_2 {
-    background-image: url(./assets/mem2.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.img_3 {
-    background-image: url(./assets/mem3.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.img_4 {
-    background-image: url(./assets/mem4.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+img {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
 }
 
 #i_1:checked ~ .container .img_1,
@@ -132,7 +112,7 @@ label:active .circle {
 
 .title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     width: 0;
     height: 0;
     visibility: hidden;
@@ -154,6 +134,16 @@ label:active .circle {
 }
 
 @media (max-width: 950px) {
+    .wrapper {
+        width: calc(24vw + 15rem);
+    }
+
+    .img_container {
+        width: calc(24vw + 15rem);
+        height: calc(34vw + 15rem);
+        padding: 0.5rem;
+    }
+
     .controls_container {
         flex-direction: column;
         align-items: center;
@@ -166,21 +156,19 @@ label:active .circle {
         margin-right: auto;
     }
 
-    .img_container {
-        height: 40vh;
-    }
-
-    .title {
-        font-size: 1rem; 
-    }
+    .title { font-size: 1.5rem; }
 }
 
-@media (max-width: 635px) {
-    .img_container {
-        height: 29vh;
+@media (max-width: 400px) {
+    .wrapper {
+        width: calc(24vw + 10rem);
     }
 
-    .title {
-        font-size: 0.5rem; 
+    .img_container {
+        width: calc(24vw + 10rem);
+        height: calc(34vw + 10rem);
+        padding: 0.2rem;
     }
+
+    .title { font-size: 1rem; }
 }

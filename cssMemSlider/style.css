@@ -12,15 +12,20 @@ html, body {
     justify-content: center;
     align-items: center;
     background-color: #25282A;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 50vw;
+    margin: 0 auto;
 }
 
 .container {
-    width: 60vw;
-    margin: 0 auto;
     display: flex;
     background-color: aliceblue;
     border-radius: 0.5rem;
     box-shadow: 0.05rem 0.05rem 12rem #73c8adae;
+    background-color: rgb(63 93 86);
 }
 
 input { display: none; }
@@ -28,12 +33,12 @@ input { display: none; }
 .slide { width: 0; }
 
 .img_container {
-    width: 60vw;
-    height: 70vh;
+    width: 50vw;
+    height: 60vh;
     border-radius: 0.5rem;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 1s;
+    transition: opacity 2s;
 }
 
 .img_1 {
@@ -98,6 +103,8 @@ label:hover .circle {
 }
 
 label:active .circle {
+    width: 0.8rem;
+    height: 0.8rem;
     background-color: #73c8adae;
 }
 
@@ -109,11 +116,11 @@ label:active .circle {
 }
 
 .controls_container {
-    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60vw;
+    width: 100%;
+    max-height: 10vh;
 }
 
 .controls { display: flex; }
@@ -127,11 +134,12 @@ label:active .circle {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     width: 0;
+    height: 0;
     visibility: hidden;
     color: white;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 2s;
+    transition: opacity 3s;
 }
 
 #i_1:checked ~ .controls_container .title_1,
@@ -139,7 +147,40 @@ label:active .circle {
 #i_3:checked ~ .controls_container .title_3,
 #i_4:checked ~ .controls_container .title_4 {
     width: 100%;
+    height: auto;
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
+}
+
+@media (max-width: 950px) {
+    .controls_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .controls { order: -1; }
+
+    .title_container { 
+        order: 1;
+        margin-right: auto;
+    }
+
+    .img_container {
+        height: 40vh;
+    }
+
+    .title {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 635px) {
+    .img_container {
+        height: 29vh;
+    }
+
+    .title {
+        font-size: 0.5rem; 
+    }
 }
